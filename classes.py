@@ -1,0 +1,3 @@
+
+class WordCounter:
+    pass
