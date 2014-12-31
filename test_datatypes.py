@@ -40,6 +40,16 @@ class TestCollections(unittest.TestCase):
         self.assertEqual(len(menu.keys()), 1)
         menu['Spam, bacon and eggs'] = ['spam', 'bacon', 'eggs']
 
+    def test_deletion_in_a_list(self):
+        breakfast = ['spam', 'beans', 'spam']
+        del(breakfast[1])
+        self.assertEqual(len(breakfast), 2)
+
+    def test_deletion_in_a_dict(self):
+        menu = {'Spam and eggs' : ['spam', 'eggs']}
+        del(menu['Spam and eggs'])
+        self.assertEqual(len(menu.keys()), 0)
+        
 class TestBooleanEvaluation(unittest.TestCase):
     def test_numbers(self):
         self.assertFalse(0)
