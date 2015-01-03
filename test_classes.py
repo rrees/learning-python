@@ -22,3 +22,11 @@ class TestWordCounter(unittest.TestCase):
 
         self.assertEquals(word_counter.count(), 3)
         self.assertEquals(word_counter.count(word="spam"), 3)
+
+class TestCapiClient(unittest.TestCase):
+    # CAPI has two endpoints: /search and /content_id
+    # Each endpoint takes common parameters: page-size, api-key
+    # Using test-driven development;
+    # create a class hierarchy that creates appropriate url strings for each endpoint
+    # but whose parameter handling is shared
+    pass
