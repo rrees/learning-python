@@ -49,7 +49,14 @@ class TestCollections(unittest.TestCase):
         menu = {'Spam and eggs' : ['spam', 'eggs']}
         del(menu['Spam and eggs'])
         self.assertEqual(len(menu.keys()), 0)
-        
+
+class TestTuples(unittest.TestCase):
+    def test_destructuring(self):
+        x,y,z = (3,4,5)
+        self.assertEqual(x, 3)
+        self.assertEqual(y, 4)
+        self.assertEqual(z, 5)
+
 class TestBooleanEvaluation(unittest.TestCase):
     def test_numbers(self):
         self.assertFalse(0)
