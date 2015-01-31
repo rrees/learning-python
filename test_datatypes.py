@@ -24,17 +24,6 @@ class TestCollections(unittest.TestCase):
         spam_list = ['spam', 'spam', 'spam']
         self.assertEqual(len(spam_list), 3)
 
-    def test_list_index_access(self):
-        breakfast = ['spam', 'beans', 'eggs']
-        self.assertEqual(len(breakfast), 3)
-        self.assertEqual(breakfast[0], 'spam')
-        self.assertEqual(breakfast[2], 'eggs')
-
-    def test_list_append(self):
-        breakfast = []
-        breakfast.append('spam')
-        self.assertEqual(len(breakfast), 1)
-
     def test_dictionary_addition(self):
         menu = {'Spam and eggs' : ['spam', 'eggs']}
         self.assertEqual(len(menu.keys()), 1)
@@ -49,6 +38,22 @@ class TestCollections(unittest.TestCase):
         menu = {'Spam and eggs' : ['spam', 'eggs']}
         del(menu['Spam and eggs'])
         self.assertEqual(len(menu.keys()), 0)
+
+class TestLists(unittest.TestCase):
+    def test_list_index_access(self):
+        breakfast = ['spam', 'beans', 'eggs']
+        self.assertEqual(len(breakfast), 3)
+        self.assertEqual(breakfast[0], 'spam')
+        self.assertEqual(breakfast[2], 'eggs')
+
+    def test_list_append(self):
+        breakfast = []
+        breakfast.append('spam')
+        self.assertEqual(len(breakfast), 1)
+
+    def test_list_slicing(self):
+        numbers = [1,2,3,4]
+        self.assertEqual(numbers[1:3], [2,3])
 
 class TestTuples(unittest.TestCase):
     def test_destructuring(self):
