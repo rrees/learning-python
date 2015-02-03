@@ -11,6 +11,9 @@ class TestDataTypes(unittest.TestCase):
     def test_string_concatenation(self):
         self.assertEqual("hello " + "world", "hello world")
 
+    def test_string_quotes(self):
+        self.assertEqual("hello", 'hello')
+
     def test_boolean_literals(self):
         self.assertTrue(True)
         self.assertFalse(False)
