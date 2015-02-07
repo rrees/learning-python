@@ -16,6 +16,9 @@ class TestGeneratorCode(unittest.TestCase):
     def test_dictionary_comprehension_syntax(self):
         self.assertDictEqual({"a" : 2, "b": 3}, {key: value + 1 for key, value in {"a": 1, "b": 2}.items()})
 
+    def test_comprehension_filtering(self):
+        self.assertSequenceEqual(["bacon"], [item for item in ["spam", "bacon", "eggs"] if len(item) > 4])
+
 class TestCreatingGenerators(unittest.TestCase):
     @unittest.skip("implement comprehensions module")
     def test_creating_numbers(self):
