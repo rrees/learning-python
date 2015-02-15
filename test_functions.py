@@ -23,3 +23,15 @@ class TestFunctions(unittest.TestCase):
     		return f(n)
 
     	self.assertEqual(apply_function(double, 2), 4)
+
+    def test_functions_in_comprehensions(self):
+    	def sentence_case(s):
+    		return s[0].upper() + s[1:]
+
+    	self.assertSequenceEqual([sentence_case(tree) for tree in ['elm', 'pine']], ['Elm', 'Pine'])
+
+    def test_functions_in_map(self):
+    	pass
+
+    def test_functions_in_reduce(self):
+    	pass
