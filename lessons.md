@@ -4,6 +4,7 @@
 2. Datatypes and promotion
 2. Collections
 3. Comprehensions
+4. Functions, lambdas and decorators
 4. Generators
 5. Regular expressions
 6. Modules
