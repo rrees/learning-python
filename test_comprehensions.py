@@ -2,10 +2,18 @@ import unittest
 
 import comprehensions
 
-class TestGeneratorCode(unittest.TestCase):
+class TestComprehensions(unittest.TestCase):
     def test_range(self):
         # Range generates numbers starting at zero to match Python's indexing
         self.assertEqual(range(3), [0,1,2])
+
+    def test_comprehension_immutability(self):
+        a = [1,2,3]
+
+        b = [i + 1 for i in a]
+
+        self.assertSequenceEqual(a, [1,2,3])
+        self.assertSequenceEqual(b, [2,3,4])
 
     def test_comprehension_syntax(self):
         self.assertSequenceEqual([0, 2, 4, 6], [i * 2 for i in range(4)])

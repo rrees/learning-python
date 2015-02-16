@@ -8,15 +8,23 @@ class TestDataTypes(unittest.TestCase):
     def test_number_promotion(self):
         self.assertEqual(3.0 + 4, 7.0)
 
+    def test_boolean_literals(self):
+        self.assertTrue(True)
+        self.assertFalse(False)
+
+class TestStrings(unittest.TestCase):
+    def test_string_immutability(self):
+        s = "hello"
+        t = "hello".upper()
+
+        self.assertEqual(s, "hello")
+        self.assertEqual(t, "HELLO")
+        
     def test_string_concatenation(self):
         self.assertEqual("hello " + "world", "hello world")
 
     def test_string_quotes(self):
         self.assertEqual("hello", 'hello')
-
-    def test_boolean_literals(self):
-        self.assertTrue(True)
-        self.assertFalse(False)
 
 class TestBooleanEvaluation(unittest.TestCase):
     def test_numbers(self):
