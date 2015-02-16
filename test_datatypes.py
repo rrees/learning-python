@@ -15,7 +15,7 @@ class TestDataTypes(unittest.TestCase):
 class TestStrings(unittest.TestCase):
     def test_string_immutability(self):
         s = "hello"
-        t = "hello".upper()
+        t = s.upper()
 
         self.assertEqual(s, "hello")
         self.assertEqual(t, "HELLO")
