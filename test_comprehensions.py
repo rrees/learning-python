@@ -27,7 +27,7 @@ class TestComprehensions(unittest.TestCase):
     def test_comprehension_filtering(self):
         self.assertSequenceEqual(["bacon"], [item for item in ["spam", "bacon", "eggs"] if len(item) > 4])
 
-class TestCreatingGenerators(unittest.TestCase):
+class TestCreatingComprehensions(unittest.TestCase):
     @unittest.skip("implement comprehensions module")
     def test_creating_numbers(self):
         self.assertSequenceEqual(comprehensions.generate_numbers(10),
