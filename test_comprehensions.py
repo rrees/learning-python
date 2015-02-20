@@ -44,6 +44,6 @@ class TestCreatingComprehensions(unittest.TestCase):
             [2,4,6,8,10])
 
     @unittest.skip("implement comprehensions module")
-    def test_creating_even_numbers(self):
-        self.assertSequenceEqual(comprehensions.generate_even_numbers(10),
+    def test_creating_even_numbers_via_map_and_filter(self):
+        self.assertSequenceEqual(comprehensions.generate_even_numbers_map_and_filter(10),
             [2,4,6,8,10])

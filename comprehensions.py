@@ -9,6 +9,7 @@ def generate_natural_numbers(upper_limit):
 
 def generate_even_numbers(upper_limit):
     # Implement this by filtering out odd numbers
+    # Python modulo is %, e.g. 4 % 5 is 4, 3 % 3 is zero
     pass
 
 def generate_even_numbers_map_and_filter(upper_limit):
