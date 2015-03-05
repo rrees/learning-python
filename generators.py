@@ -4,3 +4,6 @@ def fib():
     while True:
         yield a
         a,b = b, a+b
+
+def my_range(lower, upper):
+	pass
