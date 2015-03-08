@@ -1,6 +1,7 @@
 
 def generate_numbers(upper_limit):
     # Implement this via the range in-built function
+    # Use the built-in return function to return a value from the function
     pass
 
 def generate_natural_numbers(upper_limit):
