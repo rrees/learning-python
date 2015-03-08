@@ -23,6 +23,32 @@ class TestWordCounter(unittest.TestCase):
         self.assertEquals(word_counter.count(), 3)
         self.assertEquals(word_counter.count(word="spam"), 3)
 
+class Knight:
+
+    def rank(self):
+        return 'Knight'
+
+    def wound(self):
+        return "Ow!"
+
+class BlackKnight(Knight):
+    def wound(self):
+        return "It's only a flesh wound"
+
+class TestInheritence(unittest.TestCase):
+    def setUp(self):
+        self.arthur = Knight()
+        self.black_knight = BlackKnight()
+
+    def test_method_overriding(self):
+        self.assertEqual(self.arthur.wound(), 'Ow!')
+        self.assertEqual(self.black_knight.wound(), "It's only a flesh wound")
+
+    def test_method_inheritence(self):
+        self.assertEqual(self.arthur.rank(), self.black_knight.rank())
+        self.assertEqual(self.arthur.rank(), 'Knight')
+        self.assertEqual(self.black_knight.rank(), 'Knight')
+
 class TestCapiClient(unittest.TestCase):
     # CAPI has two endpoints: /search and /content_id
     # Each endpoint takes common parameters: page-size, api-key
