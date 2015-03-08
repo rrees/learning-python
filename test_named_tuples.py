@@ -19,3 +19,6 @@ class TestNamedTuples(unittest.TestCase):
 
         with self.assertRaises(AttributeError):
             p.b = 3
+
+        with self.assertRaises(AttributeError):
+            p.x = 7
