@@ -21,3 +21,8 @@ class TestReflection(unittest.TestCase):
 			self.assertTrue(hasattr(item, 'y'))
 
 			self.assertFalse(hasattr(item, 'b'))
+
+	def test_attribute_reading(self):
+		for item in self.all:
+			self.assertEqual(getattr(item, 'x'), item.x)
+			self.assertEqual(getattr(item, 'y'), item.y)
