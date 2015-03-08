@@ -52,15 +52,32 @@ class TestInheritence(unittest.TestCase):
 class TestClassMethods(unittest.TestCase):
     def test_class_methods(self):
         class A:
+            def __init__(self, x):
+                self.x = x
+
             @classmethod
             def class_method(cls):
-                return 'a'
+                return 'class_method'
+
+            @classmethod
+            def add(cls, y):
+                return cls(y).x + 1
+
+            @staticmethod
+            def static_method():
+                return 'static'
 
         class B(A):
             pass
 
-        b = B()
-        self.assertEqual(b.class_method(), 'a')
+        b = B(3)
+
+        self.assertEqual(b.x, 3)
+
+        self.assertEqual(b.class_method(), 'class_method')
+        self.assertEqual(b.add(5), 6)
+
+        self.assertEqual(b.static_method(), 'static')
 
 class TestCapiClient(unittest.TestCase):
     # CAPI has two endpoints: /search and /content_id
