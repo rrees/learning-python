@@ -49,6 +49,19 @@ class TestInheritence(unittest.TestCase):
         self.assertEqual(self.arthur.rank(), 'Knight')
         self.assertEqual(self.black_knight.rank(), 'Knight')
 
+class TestClassMethods(unittest.TestCase):
+    def test_class_methods(self):
+        class A:
+            @classmethod
+            def class_method(cls):
+                return 'a'
+
+        class B(A):
+            pass
+
+        b = B()
+        self.assertEqual(b.class_method(), 'a')
+
 class TestCapiClient(unittest.TestCase):
     # CAPI has two endpoints: /search and /content_id
     # Each endpoint takes common parameters: page-size, api-key
