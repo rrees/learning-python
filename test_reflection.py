@@ -26,3 +26,12 @@ class TestReflection(unittest.TestCase):
 		for item in self.all:
 			self.assertEqual(getattr(item, 'x'), item.x)
 			self.assertEqual(getattr(item, 'y'), item.y)
+
+	def test_attribute_setting(self):
+
+		setattr(self.pc, 'b', 3)
+		self.assertTrue(hasattr(self.pc, 'b'))
+		self.assertEqual(getattr(self.pc, 'b'), 3)
+
+		setattr(self.pc, 'y', 14)
+		self.assertEqual(getattr(self.pc, 'y'), 14)
