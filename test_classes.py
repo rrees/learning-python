@@ -2,27 +2,6 @@ import unittest
 
 from classes import WordCounter
 
-class TestWordCounter(unittest.TestCase):
-    @unittest.skip("implement WordCounter")
-    def test_word_counter_count(self):
-        word_counter = WordCounter()
-        word_counter.add_word("polly")
-        word_counter.add_word("parrot")
-
-        self.assertEquals(word_counter.count(), 2)
-        self.assertEquals(word_counter.count(word="polly"), 1)
-        self.assertEquals(word_counter.count(word="parrot"), 1)
-
-    @unittest.skip("check that the count tracks dupes correctly")
-    def test_word_counter(self):
-        word_counter = WordCounter()
-
-        for i in range(3):
-            word_counter.add_word("spam")
-
-        self.assertEquals(word_counter.count(), 3)
-        self.assertEquals(word_counter.count(word="spam"), 3)
-
 class Knight:
 
     def rank(self):
@@ -78,6 +57,27 @@ class TestClassMethods(unittest.TestCase):
         self.assertEqual(b.add(5), 6)
 
         self.assertEqual(b.static_method(), 'static')
+
+class TestWordCounter(unittest.TestCase):
+    @unittest.skip("implement WordCounter")
+    def test_word_counter_count(self):
+        word_counter = WordCounter()
+        word_counter.add_word("polly")
+        word_counter.add_word("parrot")
+
+        self.assertEquals(word_counter.count(), 2)
+        self.assertEquals(word_counter.count(word="polly"), 1)
+        self.assertEquals(word_counter.count(word="parrot"), 1)
+
+    @unittest.skip("check that the count tracks dupes correctly")
+    def test_word_counter(self):
+        word_counter = WordCounter()
+
+        for i in range(3):
+            word_counter.add_word("spam")
+
+        self.assertEquals(word_counter.count(), 3)
+        self.assertEquals(word_counter.count(word="spam"), 3)
 
 class TestCapiClient(unittest.TestCase):
     # CAPI has two endpoints: /search and /content_id
