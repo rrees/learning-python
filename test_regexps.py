@@ -33,3 +33,11 @@ class TestRegExpBasics(unittest.TestCase):
 		self.assertEqual(re.sub(r'dead', 'live', start_string), end_string)
 
 		self.assertEqual(start_string.replace('dead', 'live'), re.sub('dead', 'live', start_string))
+
+	def  test_advanced_substitution(self):
+
+		s = 'Polly! Polly Parrot!'
+
+		self.assertEqual(s.replace('Polly', 'Hey'), 'Hey! Hey Parrot!')
+
+		self.assertEqual(re.sub(r'^Polly', 'Hey', s), 'Hey! Polly Parrot!')
