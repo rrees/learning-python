@@ -23,3 +23,13 @@ class TestRegExpBasics(unittest.TestCase):
 		self.assertIsNotNone(re.match(r'dead', s))
 
 		self.assertEqual(pattern.match(s).groups(), re.match(r'dead', s).groups())
+
+	def test_substitution(self):
+
+		start_string = 'dead parrot'
+		end_string = 'live parrot'
+
+		self.assertEqual(start_string.replace('dead', 'live'), end_string)
+		self.assertEqual(re.sub(r'dead', 'live', start_string), end_string)
+
+		self.assertEqual(start_string.replace('dead', 'live'), re.sub('dead', 'live', start_string))
