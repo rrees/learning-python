@@ -5,3 +5,6 @@ def uppercase(f):
 @uppercase
 def greet(name):
     return "Hello " + name
+
+def farewell(name):
+	return "Farewell " + name
