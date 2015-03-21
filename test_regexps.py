@@ -43,3 +43,12 @@ class TestRegExpBasics(unittest.TestCase):
 		self.assertEqual(s.replace('Polly', 'Hey'), 'Hey! Hey Parrot!')
 
 		self.assertEqual(re.sub(r'^Polly', 'Hey', s), 'Hey! Polly Parrot!')
+
+	def test_findall(self):
+		names = "Emma Jones Eric Idle Steven Jones Michael Palin"
+
+		joneses = re.findall('\w+ Jones', names)
+
+		self.assertEqual(len(joneses), 2)
+
+		self.assertEqual(joneses, ['Emma Jones', 'Steven Jones'])
