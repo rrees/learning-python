@@ -17,12 +17,14 @@ class TestRegExpBasics(unittest.TestCase):
 	def test_patterns(self):
 		s = "dead parrot"
 
-		pattern = re.compile('dead')
+		pattern = re.compile('(dead)')
 
 		self.assertIsNotNone(pattern.match(s))
-		self.assertIsNotNone(re.match(r'dead', s))
+		self.assertIsNotNone(re.match(r'(dead)', s))
 
-		self.assertEqual(pattern.match(s).groups(), re.match(r'dead', s).groups())
+		self.assertEqual(len(pattern.match(s).groups()), 1)
+
+		self.assertEqual(pattern.match(s).groups(), re.match(r'(dead)', s).groups())
 
 	def test_substitution(self):
 
