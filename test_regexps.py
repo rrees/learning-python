@@ -47,8 +47,21 @@ class TestRegExpBasics(unittest.TestCase):
 	def test_findall(self):
 		names = "Emma Jones Eric Idle Steven Jones Michael Palin"
 
-		joneses = re.findall('\w+ Jones', names)
+		joneses = re.findall(r'\w+ Jones', names)
 
 		self.assertEqual(len(joneses), 2)
 
 		self.assertEqual(joneses, ['Emma Jones', 'Steven Jones'])
+
+	def test_named_groups(self):
+		date_string = "2015-03-07"
+		pattern = r'(?P<year>\d{4})-(?P<month>\d{2})-(?P<day>\d{2})'
+
+		match = re.match(pattern, date_string)
+		groups = match.groupdict()
+
+		for key in ['year', 'month', 'day']:
+			self.assertTrue(key in groups.keys())
+
+		for key, value in [('year', '2015'), ('month', '03'), ('day', '07')]:
+			self.assertEqual(groups[key], value)
