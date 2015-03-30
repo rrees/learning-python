@@ -16,13 +16,13 @@ class TestFunctions(unittest.TestCase):
 
     def test_functions_are_identities(self):
 
-    	def double(n):
+    	def square(n):
     		return n * n
 
     	def apply_function(f, n):
     		return f(n)
 
-    	self.assertEqual(apply_function(double, 2), 4)
+    	self.assertEqual(apply_function(square, 2), 4)
 
     def test_functions_in_comprehensions(self):
     	def sentence_case(s):
