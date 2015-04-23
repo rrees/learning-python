@@ -60,6 +60,13 @@ class TestClassMethods(unittest.TestCase):
 
 class TestWordCounter(unittest.TestCase):
     @unittest.skip("implement WordCounter")
+    def test_word_counter_initialisation(self):
+        word_counter = new WordCounter()
+
+        self.assertEquals(word_counter.count(), 0)
+
+
+    @unittest.skip("implement counting words")
     def test_word_counter_count(self):
         word_counter = WordCounter()
         word_counter.add_word("polly")
@@ -70,7 +77,7 @@ class TestWordCounter(unittest.TestCase):
         self.assertEquals(word_counter.count(word="parrot"), 1)
 
     @unittest.skip("check that the count tracks dupes correctly")
-    def test_word_counter(self):
+    def test_word_counter_duplication(self):
         word_counter = WordCounter()
 
         for i in range(3):
@@ -78,6 +85,16 @@ class TestWordCounter(unittest.TestCase):
 
         self.assertEquals(word_counter.count(), 3)
         self.assertEquals(word_counter.count(word="spam"), 3)
+
+    @unittest.skip("implement words that haven't been seen")
+    def test_word_counter_unknown_word(self):
+        word_counter = WordCounter()
+
+        word_counter.add_word("hello")
+        word_counter.add_word("world")
+
+        self.assertEquals(word_counter.count("goodbye"), 0)
+
 
 class TestCapiClient(unittest.TestCase):
     # CAPI has two endpoints: /search and /content_id
