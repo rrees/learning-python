@@ -17,7 +17,7 @@ class TestRegExpBasics(unittest.TestCase):
 	def test_patterns(self):
 		s = "dead parrot"
 
-		pattern = re.compile('(dead)')
+		pattern = re.compile(r'(dead)')
 
 		self.assertIsNotNone(pattern.match(s))
 		self.assertIsNotNone(re.match(r'(dead)', s))

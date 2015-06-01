@@ -61,7 +61,7 @@ class TestClassMethods(unittest.TestCase):
 class TestWordCounter(unittest.TestCase):
     @unittest.skip("implement WordCounter")
     def test_word_counter_initialisation(self):
-        word_counter = new WordCounter()
+        word_counter = WordCounter()
 
         self.assertEquals(word_counter.count(), 0)
 
